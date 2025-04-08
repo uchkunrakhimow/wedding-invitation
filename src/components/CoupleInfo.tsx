@@ -31,9 +31,7 @@ const PersonProfile: React.FC<{ person: CoupleInfoType; isRight: boolean }> = ({
           <Heart size={16} fill="white" />
         </div>
       </div>
-      <h2 className="text-2xl font-serif font-bold mb-1 text-gray-800">
-        {person.name}
-      </h2>
+      <h2 className="text-2xl  font-bold mb-1 text-gray-800">{person.name}</h2>
       <p className="text-gray-600">{person.family}</p>
     </div>
   );

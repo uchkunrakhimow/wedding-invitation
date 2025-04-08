@@ -10,7 +10,6 @@ const Header: React.FC<HeaderProps> = ({ isLoaded }) => {
     <div className="relative overflow-hidden bg-gradient-to-r from-rose-100 to-pink-100 p-8 text-center">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-300 to-pink-300"></div>
       </div>
 
       <div className="relative">
@@ -22,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ isLoaded }) => {
         </div>
 
         <h1
-          className={`font-serif text-5xl font-bold text-rose-600 mb-3 transition-all duration-1000 ${
+          className={` text-5xl font-bold text-rose-600 mb-3 transition-all duration-1000 ${
             isLoaded
               ? "translate-y-0 opacity-100 scale-100"
               : "translate-y-10 opacity-0 scale-90"
@@ -32,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ isLoaded }) => {
           {weddingConstants.couple.bride.name.split(" ")[0]}
         </h1>
 
-        <p className="text-xl text-rose-700 mb-4 font-serif italic">
+        <p className="text-xl text-rose-700 mb-4  italic">
           {weddingConstants.messages.invitation}
         </p>
 

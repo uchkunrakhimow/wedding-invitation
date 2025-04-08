@@ -56,7 +56,7 @@ const Countdown: React.FC<CountdownProps> = ({ isLoaded }) => {
 
   return (
     <div
-      className={`transition-all duration-1000 delay-300 ${
+      className={`transition-all duration-1000 delay-300 p-8 ${
         isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >

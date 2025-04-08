@@ -42,7 +42,7 @@ const Program: React.FC<ProgramProps> = ({ isLoaded }) => {
         isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <h2 className="text-2xl font-serif font-bold text-center mb-8 text-rose-700">
+      <h2 className="text-2xl  font-bold text-center mb-8 text-rose-700">
         {weddingConstants.messages.weddingProgram}
       </h2>
 

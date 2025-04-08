@@ -4,7 +4,7 @@ import { weddingConstants } from "../constants";
 const Footer: React.FC = () => {
   return (
     <div className="p-8 bg-rose-50 text-center border-t border-rose-100">
-      <h2 className="text-xl font-serif font-bold mb-4 text-rose-700">
+      <h2 className="text-xl  font-bold mb-4 text-rose-700">
         {weddingConstants.messages.contactTitle}
       </h2>
 

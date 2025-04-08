@@ -79,7 +79,7 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
         isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <h2 className="text-2xl font-serif font-bold mb-4 text-rose-700">
+      <h2 className="text-2xl  font-bold mb-4 text-rose-700">
         {weddingConstants.messages.rsvpQuestion}
       </h2>
       <p className="text-gray-600 mb-6 max-w-md mx-auto">
