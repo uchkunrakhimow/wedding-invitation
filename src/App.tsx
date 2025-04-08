@@ -159,7 +159,6 @@ const App = () => {
               <div className="h-0.5 w-32 bg-gradient-to-r from-rose-300 to-pink-300 rounded-full"></div>
             </div>
 
-            {/* Countdown timer */}
             <div
               className={`transition-all duration-1000 delay-300 ${
                 isLoaded
@@ -167,32 +166,32 @@ const App = () => {
                   : "translate-y-10 opacity-0"
               }`}
             >
-              <p className="text-xl text-rose-700 mb-4 font-medium">
+              <p className="text-xl text-rose-700 mb-4 font-medium text-center">
                 To'y kunigacha:
               </p>
-              <div className="flex justify-center space-x-2 sm:space-x-4">
-                <div className="flex flex-col items-center">
+              <div className="flex flex-wrap justify-center gap-4 sm:space-x-4">
+                <div className="flex flex-col items-center min-w-[60px]">
                   {countdownAnimation(days)}
                   <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
                     Kun
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center min-w-[60px]">
                   {countdownAnimation(hours)}
                   <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
                     Soat
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center min-w-[60px]">
                   {countdownAnimation(minutes)}
                   <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
                     Daqiqa
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center min-w-[60px]">
                   {countdownAnimation(seconds)}
                   <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
                     Soniya
