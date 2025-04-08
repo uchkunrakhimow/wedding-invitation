@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ isLoaded }) => {
           {weddingConstants.couple.bride.name.split(" ")[0]}
         </h1>
 
-        <p className="text-xl text-rose-700 mb-4  italic">
+        <p className="text-xl text-rose-700 mb-4">
           {weddingConstants.messages.invitation}
         </p>
 
