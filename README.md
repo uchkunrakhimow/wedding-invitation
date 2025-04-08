@@ -15,6 +15,8 @@ src/
 │   ├── RSVP.tsx            # RSVP form for guests
 │   ├── Toast.tsx           # Notification component
 │   └── WeddingDetails.tsx  # Date, time and venue info
+│   └── BackgroundMusic.tsx # Background Music
+│   └── HeartAnimation.tsx  # Heart animation
 ├── App.tsx                 # Main application component
 ├── constants.ts            # All wedding data and text
 ├── index.tsx               # Application entry point
