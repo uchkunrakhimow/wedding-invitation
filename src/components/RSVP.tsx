@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Check, X } from "lucide-react";
+import { toast } from "react-hot-toast";
 import { weddingConstants } from "../constants";
-import { RSVPFormData, Toast } from "../types";
+
+interface RSVPFormData {
+  name: string;
+  phone: string;
+  attending: boolean | null;
+  guests: number;
+  wishes: string;
+}
 
 interface RSVPProps {
   isLoaded: boolean;
-  setToast: React.Dispatch<React.SetStateAction<Toast>>;
 }
 
-const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
+const RSVP: React.FC<RSVPProps> = ({ isLoaded }) => {
   const [showRSVP, setShowRSVP] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<RSVPFormData>({
@@ -54,10 +61,11 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
 
         setSubmitted(true);
         setShowRSVP(false);
-        setToast({
-          show: true,
-          message: weddingConstants.messages.toasts.thankYouNotAttending,
-          type: "info",
+
+        // Show toast with react-hot-toast
+        toast(weddingConstants.messages.toasts.thankYouNotAttending, {
+          icon: "👋",
+          id: "not-attending-toast",
         });
       }, 300);
     }
@@ -67,10 +75,9 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
     e.preventDefault();
 
     if (formData.attending === null) {
-      setToast({
-        show: true,
-        message: weddingConstants.messages.toasts.chooseOption,
-        type: "warning",
+      // Show warning toast with react-hot-toast
+      toast.error(weddingConstants.messages.toasts.chooseOption, {
+        id: "warning-toast",
       });
       return;
     }
@@ -79,13 +86,19 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
     localStorage.setItem("weddingRSVP", JSON.stringify(formData));
 
     setSubmitted(true);
-    setToast({
-      show: true,
-      message: formData.attending
-        ? weddingConstants.messages.toasts.thankYouAttending
-        : weddingConstants.messages.toasts.thankYouNotAttending,
-      type: formData.attending ? "success" : "info",
-    });
+
+    // Show success toast with react-hot-toast
+    if (formData.attending) {
+      toast.success(weddingConstants.messages.toasts.thankYouAttending, {
+        icon: "🎉",
+        id: "attending-toast",
+      });
+    } else {
+      toast(weddingConstants.messages.toasts.thankYouNotAttending, {
+        icon: "👋",
+        id: "not-attending-toast",
+      });
+    }
 
     setTimeout(() => {
       setShowRSVP(false);

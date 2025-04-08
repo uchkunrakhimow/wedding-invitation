@@ -12,6 +12,10 @@ export interface RSVPFormData {
   wishes: string;
 }
 
+export interface Toast {
+  show: boolean;
+  message: string;
+}
 export interface CountdownValues {
   days: number;
   hours: number;
