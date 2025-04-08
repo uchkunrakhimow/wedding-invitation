@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Check, X } from "lucide-react";
 import { weddingConstants } from "../constants";
 import { RSVPFormData, Toast } from "../types";
@@ -19,6 +19,16 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
     wishes: "",
   });
 
+  // Check localStorage on component mount
+  useEffect(() => {
+    const savedRSVP = localStorage.getItem("weddingRSVP");
+    if (savedRSVP) {
+      const parsedData = JSON.parse(savedRSVP);
+      setFormData(parsedData);
+      setSubmitted(true);
+    }
+  }, []);
+
   const handleShowRSVP = () => {
     setShowRSVP(true);
     setSubmitted(false);
@@ -36,6 +46,12 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
 
     if (!isAttending) {
       setTimeout(() => {
+        // Save RSVP data to localStorage
+        localStorage.setItem(
+          "weddingRSVP",
+          JSON.stringify({ ...formData, attending: false })
+        );
+
         setSubmitted(true);
         setShowRSVP(false);
         setToast({
@@ -59,6 +75,9 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
       return;
     }
 
+    // Save RSVP data to localStorage
+    localStorage.setItem("weddingRSVP", JSON.stringify(formData));
+
     setSubmitted(true);
     setToast({
       show: true,
@@ -79,7 +98,7 @@ const RSVP: React.FC<RSVPProps> = ({ isLoaded, setToast }) => {
         isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <h2 className="text-2xl  font-bold mb-4 text-rose-700">
+      <h2 className="text-2xl font-bold mb-4 text-rose-700">
         {weddingConstants.messages.rsvpQuestion}
       </h2>
       <p className="text-gray-600 mb-6 max-w-md mx-auto">
