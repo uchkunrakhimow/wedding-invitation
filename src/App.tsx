@@ -170,25 +170,33 @@ const App = () => {
               <p className="text-xl text-rose-700 mb-4 font-medium">
                 To'y kunigacha:
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-2 sm:space-x-4">
                 <div className="flex flex-col items-center">
                   {countdownAnimation(days)}
-                  <p className="mt-2 font-medium text-rose-700">Kun</p>
+                  <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
+                    Kun
+                  </p>
                 </div>
 
                 <div className="flex flex-col items-center">
                   {countdownAnimation(hours)}
-                  <p className="mt-2 font-medium text-rose-700">Soat</p>
+                  <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
+                    Soat
+                  </p>
                 </div>
 
                 <div className="flex flex-col items-center">
                   {countdownAnimation(minutes)}
-                  <p className="mt-2 font-medium text-rose-700">Daqiqa</p>
+                  <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
+                    Daqiqa
+                  </p>
                 </div>
 
                 <div className="flex flex-col items-center">
                   {countdownAnimation(seconds)}
-                  <p className="mt-2 font-medium text-rose-700">Soniya</p>
+                  <p className="mt-2 text-sm sm:text-base font-medium text-rose-700">
+                    Soniya
+                  </p>
                 </div>
               </div>
             </div>
