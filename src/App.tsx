@@ -8,6 +8,7 @@ import Program from "./components/Program";
 import RSVP from "./components/RSVP";
 import Footer from "./components/Footer";
 import BackgroundMusic from "./components/BackgroundMusic";
+import HeartAnimation from "./components/HeartAnimation"; // Import yangi komponent
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,21 +25,31 @@ const App = () => {
         isLoaded ? "opacity-100" : "opacity-0"
       }`}
     >
+      {/* Hearts Animation komponentini qo'shamiz */}
+      <HeartAnimation />
+
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-700 ease-in-out">
         {/* Background Music */}
         <BackgroundMusic />
+
         {/* Wedding Header with Names */}
         <Header isLoaded={isLoaded} />
+
         {/* Countdown Timer */}
         <Countdown isLoaded={isLoaded} />
+
         {/* Couple Information */}
         <CoupleInfo isLoaded={isLoaded} />
+
         {/* Wedding Details (Date, Time, Venue) */}
         <WeddingDetails isLoaded={isLoaded} />
+
         {/* Wedding Program */}
         <Program isLoaded={isLoaded} />
+
         {/* RSVP Form */}
         <RSVP isLoaded={isLoaded} />
+
         {/* Footer with Contact Info */}
         <Footer />
       </div>
